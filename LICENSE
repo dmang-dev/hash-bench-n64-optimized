@@ -19,17 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-Note on the algorithm implementations:
-
-The hash-algorithm source files (crc*.c, sha*.c, md*.c, blake2s.c, etc.)
-are clean-room re-typings of public reference material — the FIPS 180-4 /
-FIPS 202 specifications, the relevant RFCs (1321, 1950, 2104, 6234, 7693,
-etc.), and the algorithm authors' own published reference C. They are
-re-expressed for <stdint.h> portability across SDCC, devkitARM, libdragon,
-cc65, and host gcc. Where an upstream reference carries its own license
-or public-domain dedication, that status is unaffected by the MIT license
-above, which applies to the benchmark harness, build system, and the
-project as an assembled work.

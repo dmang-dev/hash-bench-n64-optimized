@@ -1,0 +1,37 @@
+hash-bench — third-party / reference-implementation notices
+===========================================================
+
+The project as an assembled work — the benchmark harness, the
+per-platform main.c boot/UI/timing code, the build system, and the
+documentation — is licensed under the MIT License (see LICENSE).
+
+The hash-algorithm source files (crc*.c, adler32.c, fletcher.c,
+djb2.c, fnv1a.c, pearson.c, tiny_hashes.c, murmur3*.c, xxhash*.c,
+siphash.c, md4.c, md5.c, sha1.c, sha256.c, sha512.c, sha3.c,
+ripemd160.c, blake2s.c, hmac_sha256.c, pbkdf2_sha256.c,
+aes_cbc_mac.c) are clean-room re-typings of public reference
+material:
+
+  - FIPS 180-4    (SHA-1, SHA-256, SHA-512)
+  - FIPS 202      (SHA-3 / Keccak)
+  - RFC 1321      (MD5)
+  - RFC 1320      (MD4)
+  - RFC 1950      (Adler-32, via zlib spec)
+  - RFC 2104      (HMAC)
+  - RFC 6234      (SHA + HMAC test vectors)
+  - RFC 7693      (BLAKE2)
+  - RFC 8018      (PBKDF2)
+  - ISO/IEC 10118-3 (RIPEMD-160)
+  - the algorithm authors' own published reference C
+    (xxHash by Yann Collet; SipHash by Aumasson & Bernstein;
+    MurmurHash3 by Austin Appleby, public domain)
+
+They are re-expressed for <stdint.h> portability so the same source
+compiles unmodified across SDCC (SM83), devkitARM (libgba / libnds /
+libctru), libdragon (MIPS), cc65 (6502), and host gcc.
+
+Where an upstream reference carries its own license or public-domain
+dedication, that status is unaffected by the MIT license on this
+repository. No third-party code is vendored verbatim; the
+implementations are independent expressions of the publicly
+specified algorithms.
